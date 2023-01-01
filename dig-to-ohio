@@ -84,12 +84,11 @@ end
 
 game:GetService("Players").LocalPlayer.leaderstats.Points.Changed:Connect(function()
 	Teleport()
+	syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-to-ohio'),true))()")
 end)
 
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
-		syn.queue_on_teleport([[
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-to-ohio'),true))()
-		]])
+		syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-to-ohio'),true))()")
 	end
 end)
