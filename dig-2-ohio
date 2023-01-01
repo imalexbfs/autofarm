@@ -1,6 +1,6 @@
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
-		syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-to-ohio'),true))()")
+		syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-2-ohio'),true))()")
 	end
 end)
 
@@ -86,6 +86,19 @@ while wait() do
 	end
 end
 
+while wait() do
+	local succ = false
+	pcall(function()
+		if (game:GetService("Players").LocalPlayer.leaderstats.Points ~= nil) then
+			succ = true
+		end
+	end)
+	
+	if succ then 
+		break
+	end
+end
+
 local suc, err = pcall(function()
 	game.Players.LocalPlayer.Character.PrimaryPart.CFrame = CFrame.new(-567, -2410, 54)
 end)
@@ -96,6 +109,6 @@ if not suc then
 end
 
 game:GetService("Players").LocalPlayer.leaderstats.Points.Changed:Connect(function()
-	syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-to-ohio'),true))()")
+	syn.queue_on_teleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/imalexbfs/autofarm/main/dig-2-ohio'),true))()")
 	Teleport()
 end)
